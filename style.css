@@ -1,9 +1,7 @@
-
-
 /* Header */
 header {
-    background-color: #588157;
-    color: #fff;
+    background-color: #011627;
+    color: #FDFFFC;
     padding: 10px 20px;
     text-align: center;
 }
@@ -27,54 +25,136 @@ header nav a {
 }
 
 header nav a:hover {
-    text-decoration: underline;
+    background-color: white;
+    color: black;
+    transform: scale(1.05);
 }
 
-/* Menu Icon for Mobile */
-.menu-icon {
-    display: none;
-    font-size: 24px;
-    cursor: pointer;
+.logo, .nav-links {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.7s ease-out;
+}
+
+
+.hero {
+    position: relative;
+    background: url('hero.png') no-repeat center center/cover;
     color: #fff;
-}
-
-/* Fullscreen Video Background */
-.video-container {
-    position: relative;
-    width: 100%;
-    height: 500px; /* Full screen height */
-    overflow: hidden;
-}
-
-#background-video {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 100%; /* Ensure video covers width */
-    height: 500px; /* Ensure video covers height */
-    object-fit: cover; /* Ensures video scales properly */
-    z-index: -1; /* Places video behind content */
-}
-
-/* Content Overlay */
-.content {
-    position: relative;
-    z-index: 1; /* Ensures content is above the video */
-    color: white;
     text-align: center;
-    padding: 20px;
-    font-family: Arial, sans-serif;
+    padding: 6rem 2rem;
 }
 
-.content h1 {
-    font-size: 3em;
-    margin: 0;
+.hero .hero-text-box {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 2rem;
+    display: inline-block;
+    border-radius: 10px;
+    margin: auto;
+    max-width: 80%;
+    color: black;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
-.content p {
-    font-size: 1.2em;
+.section-button {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -2rem;
+    z-index: 10;
 }
+
+.section-button .button {
+    background: #FF9F1C;
+    color: white;
+    padding: 1.2rem 3rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.3rem;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section-button .button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    border-color: black;
+    transform: scale(1.1);
+}
+
+/* Slideshow Container */
+.slideshow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Send slideshow behind content */
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the background */
+    opacity: 0; /* Initially hidden */
+    animation: slide-animation 15s infinite;
+}
+
+/* Specific Delays for Each Slide */
+.slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.slide:nth-child(2) {
+    animation-delay: 5s;
+}
+
+.slide:nth-child(3) {
+    animation-delay: 10s;
+}
+
+/* Keyframes for Slide Animation */
+@keyframes slide-animation {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+.whatsapp-icon {
+    position: fixed;
+    right: 20px; /* WhatsApp green */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure the button stays above other content */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon img {
+    width: 40px;
+    height: 40px;
+}
+
 
 
 /* Responsive Design */
@@ -95,6 +175,70 @@ header nav a:hover {
         margin: 10px 0;
         text-align: left;
     }
+   
+/* Fullscreen Navigation for Mobile */
+/* Fullscreen Navigation for Mobile with Header */
+header nav.fullscreen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #011627; /* Matches your header background */
+    z-index: 1000; /* Ensures the menu is above other elements */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px; /* Add padding to avoid links touching screen edges */
+    gap: 15px;
+    opacity: 1;
+    transition: all 0.3s ease;
+}
+
+/* Sidebar Header (Logo and Icon Aligned Left and Right) */
+.sidebar-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Distribute logo and icon to opposite sides */
+    padding: 20px 15px; /* Adjust padding as needed */
+    border-bottom: 1px solid #ffffff33; /* Adds a separator line */
+}
+
+/* Logo Styling in Sidebar Header */
+.sidebar-header img {
+    width: 75px; /* Adjust size as needed */
+    height: auto;
+}
+
+/* Icon Styling in Sidebar Header */
+.sidebar-icon {
+    font-size: 24px; /* Adjust icon size as needed */
+    color: #FDFFFC; /* Set the color to match your theme */
+    margin-right: 15px;
+    padding: 40px; /* Adjust as needed to control the distance from the container edge */
+}
+
+
+
+/* Nav links in the fullscreen menu */
+header nav.fullscreen a {
+    font-size: 1.2rem;
+    color: white;
+    text-decoration: none;
+    padding: 10px;
+}
+
+/* Hide the menu by default */
+header nav {
+    display: none;
+}
+
+header nav.show {
+    display: flex;
+}
+
+
 
     .menu-icon {
         display: block;
@@ -111,4 +255,48 @@ header nav.show {
 }
 .content p {
     font-size: 1em;
+}
+
+.button {
+    display: block; /* Make the button elements stack vertically */
+    text-align: center;
+    font-size: 16px;
+    padding: 10px; /* Adjust padding if needed */
+  }
+
+  .whatsapp-icon {
+    bottom: 15px;
+    right: 15px;
+    padding: 8px; /* Slightly smaller padding for mobile */
+}
+
+
+@media (max-width: 480px) {
+
+    .button {
+        display: block; /* Make the button elements stack vertically */
+        text-align: center;
+        font-size: 16px;
+        padding: 10px; /* Adjust padding if needed */
+      }
+
+      .whatsapp-icon {
+        bottom: 15px;
+        right: 15px;
+        padding: 8px; /* Slightly smaller padding for mobile */
+    }
+}
+
+@media (min-width: 768px) {
+    .menu-icon {
+        display: none; /* Hide the menu icon on larger screens */
+    }
+
+    #nav-links {
+        display: flex !important; /* Ensure the navigation is visible in its default desktop state */
+    }
+
+    .sidebar-header {
+        display: none; /* Hide the sidebar header (logo) inside the fullscreen navigation */
+    }
 }
