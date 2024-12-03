@@ -42,7 +42,7 @@ header nav a:hover {
     background: url('hero.png') no-repeat center center/cover;
     color: #fff;
     text-align: center;
-    padding: 6rem 2rem;
+    padding: 3rem 2rem;
 }
 
 .hero .hero-text-box {
@@ -155,6 +155,184 @@ header nav a:hover {
     height: 40px;
 }
 
+/* Residence Capacity Section */
+.capacity {
+    padding: 3rem 2rem;
+    background-color: #ffffff; /* White background for contrast */
+    color: #011627; /* Match with overall theme */
+    text-align: center;
+    border-bottom: 1px solid #eeeeee; /* Subtle line to separate sections */
+}
+
+.capacity-content {
+    max-width: 800px;
+    margin: 0 auto; /* Center the content within the section */
+}
+
+.capacity h2 {
+    font-size: 2.5rem;
+    color: #FF9F1C; /* Matches button color for consistency */
+    margin-bottom: 1.5rem;
+}
+
+.capacity-info {
+    display: flex;
+    justify-content: space-around; /* Space items evenly */
+    gap: 2rem;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+}
+
+.capacity-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 200px;
+    background-color: #f8f9fa; /* Light grey background to contrast with white */
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.capacity-icon {
+    font-size: 3rem; /* Larger icon size */
+    color: #FF9F1C; /* Icon color matching theme */
+    margin-bottom: 1rem;
+}
+
+.capacity-item p {
+    font-size: 1.125rem;
+    color: #333; /* Dark grey text for readability */
+    margin: 0;
+}
+
+/* About Section */
+.about {
+    padding: 2rem 2rem;
+    background-color: #f8f9fa; /* Light grey background for contrast */
+    color: #011627; /* Matches the header text color for consistency */
+    text-align: center;
+}
+
+.about-content {
+    max-width: 100%;
+    margin: 0 auto; /* Center the content within the section */
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    color: #FF9F1C; /* Matches the button color to tie the branding together */
+    margin-bottom: 1.5rem;
+}
+
+.about-content p {
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: #333; /* A dark grey for easier readability */
+    margin-bottom: 1rem;
+}
+
+/* Default layout for larger screens (laptop and desktop) */
+.services {
+    display: flex;
+    flex-direction: row;
+    gap: 20px; /* Spacing between service boxes */
+    padding: 20px;
+}
+
+.service-box {
+    flex: 1 1 calc(33.33% - 40px);
+    margin: 10px;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+/* Ensure the image scales appropriately */
+.image-box img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Footer Section */
+.footer {
+    background-color: #011627;
+    color: #FDFFFC;
+    padding: 2rem 1rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    flex: 1 1 30%;
+    min-width: 200px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-social h3 {
+    font-size: 1.5rem;
+    color: #FF9F1C;
+    margin-bottom: 1rem;
+}
+
+.footer-about p,
+.footer-links ul,
+.footer-social a {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-links ul li a {
+    color: #FDFFFC;
+    text-decoration: none;
+}
+
+.footer-links ul li a:hover {
+    color: #FF9F1C;
+    text-decoration: underline;
+}
+
+.footer-social .social-icons a {
+    color: #FDFFFC;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+}
+
+.footer-social .social-icons a:hover {
+    color: #FF9F1C;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #ffffff33;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
 
 
 /* Responsive Design */
@@ -175,8 +353,6 @@ header nav a:hover {
         margin: 10px 0;
         text-align: left;
     }
-   
-/* Fullscreen Navigation for Mobile */
 /* Fullscreen Navigation for Mobile with Header */
 header nav.fullscreen {
     position: fixed;
@@ -219,7 +395,21 @@ header nav.fullscreen {
     padding: 40px; /* Adjust as needed to control the distance from the container edge */
 }
 
+.services {
+    flex-direction: column; /* Stack boxes vertically */
+}
 
+.service-box {
+    flex-direction: row; /* Make each box horizontal for mobile */
+    align-items: center;
+    gap: 20px;
+    flex: 1 1 auto; /* Adjust flex to avoid conflicting styles */
+}
+
+.image-box img {
+    width: 150px; /* Adjust image size to fit horizontally */
+    height: auto;
+}
 
 /* Nav links in the fullscreen menu */
 header nav.fullscreen a {
@@ -270,6 +460,39 @@ header nav.show {
     padding: 8px; /* Slightly smaller padding for mobile */
 }
 
+.capacity-info {
+    flex-direction: column;
+    align-items: center;
+}
+
+.capacity-item {
+    max-width: 90%; /* Reduce width for smaller screens */
+    margin-bottom: 1rem; /* Space between items */
+}
+
+.about {
+    padding: 2rem 1rem; /* Reduce padding for smaller devices */
+}
+
+.about-content h2 {
+    font-size: 2rem; /* Reduce font size for better readability on mobile */
+}
+
+.about-content p {
+    font-size: 1rem; /* Reduce font size for smaller devices */
+}
+
+
+.footer-container {
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    margin-bottom: 1.5rem;
+}
 
 @media (max-width: 480px) {
 
