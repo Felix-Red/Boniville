@@ -1,6 +1,27 @@
+/* Reset default browser margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ensure the body and html elements cover the full viewport */
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden; 
+    font-family: 'Arial', sans-serif;
+}
+
+/* For header, footer, and other container elements */
+.container, .footer-container {
+    max-width: 100%;
+}
+
+
 /* Header */
 header {
-    background-color: #011627;
+    background-color: #0A0908;
     color: #FDFFFC;
     padding: 10px 20px;
     text-align: center;
@@ -36,104 +57,54 @@ header nav a:hover {
     transition: all 0.7s ease-out;
 }
 
+.hero-section {
+    background-color: #F8F4EA;  /* Soft cream background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('pattern.png'); /* Optional background pattern */
+    background-size: cover;
+    text-align: center;
+    padding: 1rem;  /* Padding to ensure content is not too close to the edge */
+}
 
-.hero {
-    position: relative;
-    background: url('hero.png') no-repeat center center/cover;
+.hero-content {
+    max-width: 800px;
+    color: #000;
+}
+
+h1 {
+    font-size: 7rem;
+    font-weight: 1050;
+    margin: 0.5em 0;
+}
+
+.tagline {
+    font-size: 3rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin: 1em 0;
+}
+
+.description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin: 1em 0;
+}
+
+.hero-button {
+    background-color: #000;
     color: #fff;
-    text-align: center;
-    padding: 3rem 2rem;
+    border: none;
+    padding: 1em 2em;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 30px;
+    transition: background-color 0.3s ease;
 }
 
-.hero .hero-text-box {
-    background: rgba(255, 255, 255, 0.8);
-    padding: 2rem;
-    display: inline-block;
-    border-radius: 10px;
-    margin: auto;
-    max-width: 80%;
-    color: black;
-    font-size: 1.5rem;
-    text-align: center;
-}
-
-.section-button {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -2rem;
-    z-index: 10;
-}
-
-.section-button .button {
-    background: #FF9F1C;
-    color: white;
-    padding: 1.2rem 3rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    font-size: 1.3rem;
-    font-weight: bold;
-    border: 2px solid white;
-    border-radius: 10px;
-    transition: all 0.3s ease;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
-}
-
-.section-button .button:hover {
-    background: rgba(255, 255, 255, 0.9);
-    color: black;
-    border-color: black;
-    transform: scale(1.1);
-}
-
-/* Slideshow Container */
-.slideshow {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: -1; /* Send slideshow behind content */
-}
-
-.slide {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Ensures the image fills the background */
-    opacity: 0; /* Initially hidden */
-    animation: slide-animation 15s infinite;
-}
-
-/* Specific Delays for Each Slide */
-.slide:nth-child(1) {
-    animation-delay: 0s;
-}
-
-.slide:nth-child(2) {
-    animation-delay: 5s;
-}
-
-.slide:nth-child(3) {
-    animation-delay: 10s;
-}
-
-/* Keyframes for Slide Animation */
-@keyframes slide-animation {
-    0% {
-        opacity: 0;
-    }
-    20% {
-        opacity: 1;
-    }
-    40% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
+.hero-button:hover {
+    background-color: #333;
 }
 
 .whatsapp-icon {
@@ -157,104 +128,144 @@ header nav a:hover {
 
 /* Residence Capacity Section */
 .capacity {
-    padding: 3rem 2rem;
-    background-color: #ffffff; /* White background for contrast */
-    color: #011627; /* Match with overall theme */
+    background-color: #8B0000;  /* Dark red background color to match the image */
+    color: #fff;
     text-align: center;
-    border-bottom: 1px solid #eeeeee; /* Subtle line to separate sections */
+    padding: 3rem 1rem;
 }
 
 .capacity-content {
-    max-width: 800px;
-    margin: 0 auto; /* Center the content within the section */
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.capacity h2 {
-    font-size: 2.5rem;
-    color: #FF9F1C; /* Matches button color for consistency */
-    margin-bottom: 1.5rem;
+.capacity-content h2 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-transform: uppercase; /* To match the uppercase style of the image */
 }
 
 .capacity-info {
     display: flex;
-    justify-content: space-around; /* Space items evenly */
-    gap: 2rem;
-    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+    justify-content: space-between; /* Space between items */
+    gap: 2rem;  /* Add space between items */
+    flex-wrap: nowrap;  /* Keep items side by side */
+    margin-top: 2rem;
 }
 
 .capacity-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 200px;
-    background-color: #f8f9fa; /* Light grey background to contrast with white */
-    padding: 1.5rem;
+    background-color: #000;  /* Semi-transparent black to highlight the text */
+    padding: 2rem;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    flex: 1;
 }
 
 .capacity-icon {
-    font-size: 3rem; /* Larger icon size */
-    color: #FF9F1C; /* Icon color matching theme */
+    font-size: 3rem;
     margin-bottom: 1rem;
+    color: #fff;
 }
 
 .capacity-item p {
-    font-size: 1.125rem;
-    color: #333; /* Dark grey text for readability */
+    font-size: 1.2rem;
+    font-weight: 300;
     margin: 0;
 }
-
-/* About Section */
-.about {
-    padding: 2rem 2rem;
-    background-color: #f8f9fa; /* Light grey background for contrast */
-    color: #011627; /* Matches the header text color for consistency */
-    text-align: center;
-}
-
-.about-content {
-    max-width: 100%;
-    margin: 0 auto; /* Center the content within the section */
-    background: #ffffff;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 2rem;
-}
-
-.about-content h2 {
-    font-size: 2.5rem;
-    color: #FF9F1C; /* Matches the button color to tie the branding together */
-    margin-bottom: 1.5rem;
-}
-
-.about-content p {
-    font-size: 1.125rem;
-    line-height: 1.6;
-    color: #333; /* A dark grey for easier readability */
-    margin-bottom: 1rem;
-}
-
-/* Default layout for larger screens (laptop and desktop) */
+/* Services Section */
 .services {
     display: flex;
-    flex-direction: row;
-    gap: 20px; /* Spacing between service boxes */
-    padding: 20px;
+    justify-content: space-between;
+    gap: 0;
+    margin: 0;
+    flex-wrap: wrap;
 }
 
 .service-box {
-    flex: 1 1 calc(33.33% - 40px);
-    margin: 10px;
+    width: 33.33%;
     box-sizing: border-box;
-    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
-/* Ensure the image scales appropriately */
-.image-box img {
-    max-width: 100%;
-    height: auto;
+.black-background, .grey-background {
+    padding: 2rem;
 }
+
+.black-background {
+    background: #1A1A1A;
+    color: white;
+}
+
+.grey-background {
+    background: #DCD3C9;
+    color: black;
+}
+
+.image-box {
+    background: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.image-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.service-box h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.service-box p {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+.service-box .button {
+    background: rgba(0, 0, 0, 0.9);
+    color: white;
+    padding: 1.2rem 2rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: 2px solid white;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-box .button:hover {
+    background: rgba(255, 255, 255, 0.9);
+    color: black;
+    border-color: black;
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+.contact .service-box {
+    width: 100%;
+    box-sizing: border-box;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contact .black-background {
+    background: #3E5C76;
+    color: white;
+    padding: 2rem;
+}
+
 
 /* Footer Section */
 .footer {
@@ -295,23 +306,51 @@ header nav a:hover {
     line-height: 1.5;
 }
 
+/* Base styling for the footer links */
+.footer-links {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Heading style */
+.footer-links h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    cursor: pointer; /* Make the heading clickable */
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Dropdown container */
 .footer-links ul {
     list-style: none;
     padding: 0;
+    margin: 0;
+    max-height: 0; /* Start hidden */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-radius: 5px;
 }
 
+/* Links style */
 .footer-links ul li {
-    margin-bottom: 0.5rem;
+    padding: 10px;
 }
 
 .footer-links ul li a {
-    color: #FDFFFC;
     text-decoration: none;
+    color: white;
+    display: block;
 }
 
-.footer-links ul li a:hover {
-    color: #FF9F1C;
-    text-decoration: underline;
+/* Last child without border */
+.footer-links ul li:last-child {
+    border-bottom: none;
+}
+
+/* When dropdown is active */
+.footer-links.active ul {
+    max-height: 300px; /* Adjust based on the number of links */
 }
 
 .footer-social .social-icons a {
@@ -391,24 +430,26 @@ header nav.fullscreen {
 .sidebar-icon {
     font-size: 24px; /* Adjust icon size as needed */
     color: #FDFFFC; /* Set the color to match your theme */
-    margin-right: 15px;
-    padding: 40px; /* Adjust as needed to control the distance from the container edge */
+    margin-right: 1px;
+    padding: 10px; /* Adjust as needed to control the distance from the container edge */
 }
 
 .services {
-    flex-direction: column; /* Stack boxes vertically */
+    flex-direction: column;
+    gap: 1rem;
 }
 
 .service-box {
-    flex-direction: row; /* Make each box horizontal for mobile */
-    align-items: center;
-    gap: 20px;
-    flex: 1 1 auto; /* Adjust flex to avoid conflicting styles */
+    width: 100%;
 }
 
-.image-box img {
-    width: 150px; /* Adjust image size to fit horizontally */
-    height: auto;
+.about, .services, .contact {
+    padding: 3rem 1rem;
+}
+
+.about-content, .service-box {
+    max-width: 100%;
+    margin: auto;
 }
 
 /* Nav links in the fullscreen menu */
@@ -453,6 +494,22 @@ header nav.show {
     font-size: 16px;
     padding: 10px; /* Adjust padding if needed */
   }
+  h1 {
+    font-size: 2.5rem;  /* Reduce heading size */
+}
+
+.tagline {
+    font-size: 1.2rem;  /* Reduce tagline size */
+}
+
+.description {
+    font-size: 0.9rem;  /* Reduce description size for smaller screens */
+}
+
+.hero-button {
+    padding: 0.8em 1.5em;  /* Adjust button padding */
+    font-size: 0.9rem;     /* Reduce button text size */
+}
 
   .whatsapp-icon {
     bottom: 15px;
@@ -494,6 +551,18 @@ header nav.show {
     margin-bottom: 1.5rem;
 }
 
+.footer-links {
+    padding: 15px;
+}
+
+.footer-links h3 {
+    font-size: 1rem;
+}
+
+.footer-links ul li {
+    padding: 8px;
+}
+
 @media (max-width: 480px) {
 
     .button {
@@ -507,6 +576,31 @@ header nav.show {
         bottom: 15px;
         right: 15px;
         padding: 8px; /* Slightly smaller padding for mobile */
+    }
+}
+/* Smartphones (portrait and landscape) */
+@media (max-width: 600px) {
+
+   .services {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .service-box {
+        width: 100%;
+    }
+
+    .about, .services, .contact {
+        padding: 3rem 1rem;
+    }
+
+    .about-content, .service-box {
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .footer {
+        padding: 1rem;
     }
 }
 
