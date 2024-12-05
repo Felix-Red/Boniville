@@ -15,3 +15,4 @@ footerHeadings.forEach(heading => {
         parent.classList.toggle('active');
     });
 });
+
