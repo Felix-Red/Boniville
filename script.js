@@ -16,3 +16,66 @@ footerHeadings.forEach(heading => {
     });
 });
 
+const sliderTrack = document.getElementById('slider-track');
+const slides = document.querySelectorAll('.slide');
+const prevButton = document.getElementById('prev');
+const nextButton = document.getElementById('next');
+
+let currentIndex = 0;
+const totalSlides = slides.length;
+let startX = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let isDragging = false;
+
+function updateSlider() {
+    const slideWidth = slides[0].clientWidth;
+    sliderTrack.style.transform = `translateX(-${currentIndex * slideWidth}px)`;
+}
+
+prevButton.addEventListener('click', () => {
+    if (currentIndex > 0) {
+        currentIndex--;
+    } else {
+        currentIndex = totalSlides - 1;
+    }
+    updateSlider();
+});
+
+nextButton.addEventListener('click', () => {
+    if (currentIndex < totalSlides - 1) {
+        currentIndex++;
+    } else {
+        currentIndex = 0;
+    }
+    updateSlider();
+});
+
+window.addEventListener('resize', updateSlider);
+
+sliderTrack.addEventListener('touchstart', (e) => {
+    startX = e.touches[0].clientX;
+    isDragging = true;
+    sliderTrack.style.transition = 'none';
+});
+
+sliderTrack.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    const currentX = e.touches[0].clientX;
+    const deltaX = currentX - startX;
+    currentTranslate = prevTranslate + deltaX;
+    sliderTrack.style.transform = `translateX(${currentTranslate}px)`;
+});
+
+sliderTrack.addEventListener('touchend', () => {
+    isDragging = false;
+    const slideWidth = slides[0].clientWidth;
+    const movedBy = currentTranslate - prevTranslate;
+
+    if (movedBy < -50 && currentIndex < totalSlides - 1) currentIndex++;
+    if (movedBy > 50 && currentIndex > 0) currentIndex--;
+
+    updateSlider();
+    sliderTrack.style.transition = 'transform 0.5s ease';
+    prevTranslate = -currentIndex * slideWidth;
+});

@@ -13,6 +13,12 @@ html, body {
     font-family: 'Arial', sans-serif;
 }
 
+/* For header, footer, and other container elements */
+.container, .footer-container {
+    max-width: 100%;
+}
+
+
 /* Header */
 header {
     background-color: #0A0908;
@@ -43,4 +49,375 @@ header nav a:hover {
     background-color: white;
     color: black;
     transform: scale(1.05);
+}
+
+.logo, .nav-links {
+    opacity: 0;
+    transform: translateX(-100%);
+    transition: all 0.7s ease-out;
+}
+
+.about-section {
+    width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+    background-color: #f9f9f9;
+}
+
+.about-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-text h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.about-text p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #555;
+    margin-bottom: 1rem;
+}
+
+.about-image {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-image img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Great Hands Section */
+.great-hands-section {
+    width: 100%;
+    background-color: #fff;
+    padding: 3rem 1rem;
+    box-sizing: border-box;
+}
+
+.great-hands-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.great-hands-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.great-hands-image img {
+    width: 100%;
+    max-width: 500px;
+    object-fit: cover;
+}
+
+.great-hands-text {
+    flex: 1;
+    min-width: 300px;
+    text-align: left;
+}
+
+.great-hands-text h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.great-hands-text p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.live-well-btn {
+    display: inline-block;
+    background-color: #6fbf4d;
+    color: #fff;
+    padding: 0.8rem 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.live-well-btn:hover {
+    background-color: #5da53b;
+}
+
+
+/* Footer Section */
+.footer {
+    background-color: #000;
+    color: #FDFFFC;
+    padding: 2rem 1rem;
+}
+
+.footer-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 2rem;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    flex: 1 1 30%;
+    min-width: 200px;
+}
+
+.footer-about h3,
+.footer-links h3,
+.footer-social h3 {
+    font-size: 1.5rem;
+    color: #FF9F1C;
+    margin-bottom: 1rem;
+}
+
+.footer-about p,
+.footer-links ul,
+.footer-social a {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+/* Base styling for the footer links */
+.footer-links {
+    width: 100%;
+    padding: 20px;
+}
+
+/* Heading style */
+.footer-links h3 {
+    font-size: 1.2rem;
+    margin: 0;
+    cursor: pointer; /* Make the heading clickable */
+    position: relative;
+    padding: 10px 0;
+}
+
+/* Dropdown container */
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 0; /* Start hidden */
+    overflow: hidden;
+    transition: max-height 0.3s ease-out;
+    border-radius: 5px;
+}
+
+/* Links style */
+.footer-links ul li {
+    padding: 10px;
+}
+
+.footer-links ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+}
+
+/* Last child without border */
+.footer-links ul li:last-child {
+    border-bottom: none;
+}
+
+/* When dropdown is active */
+.footer-links.active ul {
+    max-height: 300px; /* Adjust based on the number of links */
+}
+
+.footer-social .social-icons a {
+    color: #FDFFFC;
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+.footer-social .social-icons a:hover {
+    color: #FF9F1C;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 2rem;
+    border-top: 1px solid #ffffff33;
+    padding-top: 1rem;
+    font-size: 0.9rem;
+}
+
+
+.footer-container {
+    flex-direction: column;
+    text-align: center;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    margin-bottom: 1.5rem;
+}
+
+.footer-links {
+    padding: 15px;
+}
+
+.footer-links h3 {
+    font-size: 1rem;
+}
+
+.footer-links ul li {
+    padding: 8px;
+}
+
+@media (max-width: 768px) {
+    header nav {
+        display: none;
+        flex-direction: column;
+        background-color: #588157;
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        width: 200px;
+        border-radius: 5px;
+        padding: 10px;
+    }
+
+    header nav a {
+        margin: 10px 0;
+        text-align: left;
+    }
+
+    header nav.fullscreen {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #011627; /* Matches your header background */
+        z-index: 1000; /* Ensures the menu is above other elements */
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px; /* Add padding to avoid links touching screen edges */
+        gap: 15px;
+        opacity: 1;
+        transition: all 0.3s ease;
+    }
+    
+    /* Sidebar Header (Logo and Icon Aligned Left and Right) */
+    .sidebar-header {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between; /* Distribute logo and icon to opposite sides */
+        padding: 20px 15px; /* Adjust padding as needed */
+        border-bottom: 1px solid #ffffff33; /* Adds a separator line */
+    }
+    
+    /* Logo Styling in Sidebar Header */
+    .sidebar-header img {
+        width: 75px; /* Adjust size as needed */
+        height: auto;
+    }
+    
+    /* Icon Styling in Sidebar Header */
+    .sidebar-icon {
+        font-size: 24px; /* Adjust icon size as needed */
+        color: #FDFFFC; /* Set the color to match your theme */
+        margin-right: 1px;
+        padding: 10px; /* Adjust as needed to control the distance from the container edge */
+    }
+
+    header nav.fullscreen a {
+        font-size: 1.2rem;
+        color: white;
+        text-decoration: none;
+        padding: 10px;
+    }
+    
+    /* Hide the menu by default */
+    header nav {
+        display: none;
+    }
+    
+    header nav.show {
+        display: flex;
+    }
+    
+    
+    
+        .menu-icon {
+            display: block;
+        }
+
+        .about-container {
+            flex-direction: column;
+            text-align: center;
+        }
+
+        .great-hands-container {
+            flex-direction: column; /* Stack elements vertically */
+            text-align: center;
+        }
+    
+        .great-hands-text {
+            order: 1; /* Text first */
+            padding: 1rem;
+        }
+    
+        .great-hands-image {
+            order: 2; /* Image second */
+            padding-top: 1rem;
+        }
+    
+        .live-well-btn {
+            width: 100%;
+        }
+  }
+    
+  
+  
+  @media (min-width: 768px) {
+    .menu-icon {
+        display: none; /* Hide the menu icon on larger screens */
+    }
+
+    #nav-links {
+        display: flex !important; /* Ensure the navigation is visible in its default desktop state */
+    }
+
+    .sidebar-header {
+        display: none; /* Hide the sidebar header (logo) inside the fullscreen navigation */
+    }
 }

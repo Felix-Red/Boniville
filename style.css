@@ -126,10 +126,69 @@ h1 {
     height: 40px;
 }
 
+.slider {
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 450px;
+    position: relative;
+}
+
+.slider-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    flex: 0 0 33.33%; /* Show 3 images at a time */
+    max-width: 33.33%;
+    height: 450px;
+}
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.slider-controls {
+    display: flex;
+    justify-content: space-between;
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    transform: translateY(-50%);
+    pointer-events: none; /* Prevent interference */
+}
+
+.slider .slider-controls button {
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: all; /* Enable clicks */
+}
+
+.slider .slider-controls #prev {
+    left: 10px;
+}
+
+.slider .slider-controls #next {
+    right: 10px;
+}
+
+.slider .slider-controls button:hover {
+    background: rgba(0, 0, 0, 0.7);
+}
+
 /* Residence Capacity Section */
 .capacity {
-    background-color: #8B0000;  /* Dark red background color to match the image */
-    color: #fff;
+    background-color: lightgray;  /* Dark red background color to match the image */
+    color: #000000;
     text-align: center;
     padding: 3rem 1rem;
 }
@@ -155,7 +214,7 @@ h1 {
 }
 
 .capacity-item {
-    background-color: #000;  /* Semi-transparent black to highlight the text */
+    background-color: gray;  /* Semi-transparent black to highlight the text */
     padding: 2rem;
     border-radius: 10px;
     max-width: 300px;
@@ -663,6 +722,7 @@ h1 {
     font-size: 1.5rem;
     margin-right: 1rem;
     transition: color 0.3s ease;
+    text-decoration: none;
 }
 
 .footer-social .social-icons a:hover {
@@ -678,9 +738,8 @@ h1 {
 }
 
 
-
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media (max-width: 768px) {
     header nav {
         display: none;
         flex-direction: column;
@@ -696,6 +755,11 @@ h1 {
     header nav a {
         margin: 10px 0;
         text-align: left;
+    }
+
+    .slide {
+        flex: 0 0 100%; /* Show 1 image at a time */
+        max-width: 100%;
     }
 /* Fullscreen Navigation for Mobile with Header */
 header nav.fullscreen {
@@ -779,9 +843,21 @@ header nav.show {
     .menu-icon {
         display: block;
     }
+
+    
+.capacity-info {
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Toggle Navigation */
+.capacity-item {
+    max-width: 90%; /* Reduce width for smaller screens */
+    margin-bottom: 1rem; /* Space between items */
+}
+
+}
+
+/* Toggle Navigation*/ 
 header nav.show {
     display: flex;
 }
@@ -799,6 +875,7 @@ header nav.show {
     font-size: 16px;
     padding: 10px; /* Adjust padding if needed */
   }
+
   h1 {
     font-size: 2.5rem;  /* Reduce heading size */
 }
@@ -820,16 +897,6 @@ header nav.show {
     bottom: 15px;
     right: 15px;
     padding: 8px; /* Slightly smaller padding for mobile */
-}
-
-.capacity-info {
-    flex-direction: column;
-    align-items: center;
-}
-
-.capacity-item {
-    max-width: 90%; /* Reduce width for smaller screens */
-    margin-bottom: 1rem; /* Space between items */
 }
 
 .about {
