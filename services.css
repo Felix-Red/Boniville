@@ -57,6 +57,25 @@ header nav a:hover {
     transition: all 0.7s ease-out;
 }
 
+.whatsapp-icon {
+    position: fixed;
+    right: 20px; /* WhatsApp green */
+    border-radius: 50%;
+    padding: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure the button stays above other content */
+    transition: transform 0.3s ease;
+}
+
+.whatsapp-icon:hover {
+    transform: scale(1.1);
+}
+
+.whatsapp-icon img {
+    width: 40px;
+    height: 40px;
+}
+
 /* General Styles */
 .services-section {
     text-align: center;

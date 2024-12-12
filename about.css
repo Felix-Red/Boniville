@@ -149,7 +149,6 @@ ul li {
 }
 
 ul li::before {
-    content: "•"; /* Custom bullet point */
     color: #6fbf4d; /* Highlight color */
     font-weight: bold;
     display: inline-block;
@@ -227,7 +226,6 @@ hr {
 .live-well-btn:hover {
     background-color: #5da53b;
 }
-
 
 /* Footer Section */
 .footer {
@@ -358,6 +356,7 @@ hr {
 .footer-links ul li {
     padding: 8px;
 }
+
 
 /* Partners Section */
 .partners-section {
