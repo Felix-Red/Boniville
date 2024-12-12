@@ -79,3 +79,4 @@ sliderTrack.addEventListener('touchend', () => {
     sliderTrack.style.transition = 'transform 0.5s ease';
     prevTranslate = -currentIndex * slideWidth;
 });
+

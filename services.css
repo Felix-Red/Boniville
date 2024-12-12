@@ -57,177 +57,88 @@ header nav a:hover {
     transition: all 0.7s ease-out;
 }
 
-.about-section {
-    width: 100%;
-    padding: 2rem 1rem;
-    box-sizing: border-box;
+/* General Styles */
+.services-section {
+    text-align: center;
+    padding: 50px 20px;
     background-color: #f9f9f9;
 }
 
-.about-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.about-text {
-    flex: 1;
-    min-width: 300px;
-}
-
-.about-text h2 {
+.services-section h2 {
     font-size: 2rem;
-    margin-bottom: 1rem;
-    color: #333;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    position: relative;
 }
 
-.about-text p {
-    font-size: 1rem;
-    line-height: 1.5;
-    color: #555;
-    margin-bottom: 1rem;
-}
-
-.about-image {
-    flex: 1;
-    min-width: 300px;
+.services-container {
     display: flex;
-    justify-content: center;
-}
-
-.about-image img {
-    width: 100%;
-    max-width: 500px;
-    border-radius: 8px;
-    object-fit: cover;
-}
-
-/* Vision and Mission Section */
-.vision-mission-section {
-    background-color: #1a1a1a; /* Dark background */
-    color: #f5f5f5; /* Light text */
-    padding: 2rem 1rem;
-    display: flex; 
-    flex-direction: column;
-    align-items: center; /* Center horizontally */
-    justify-content: center; /* Center vertically */
-    text-align: center; /* Center text */
-    min-height: 100vh; /* Full height of viewport */
-    box-sizing: border-box;
-}
-
-.vision, .mission {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.vision h2, .mission h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-}
-
-.vision p, .mission p {
-    font-size: 1rem;
-    line-height: 1.6;
-    margin-bottom: 1rem;
-}
-
-ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-ul li {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    line-height: 1.5;
-}
-
-ul li::before {
-    content: "•"; /* Custom bullet point */
-    color: #6fbf4d; /* Highlight color */
-    font-weight: bold;
-    display: inline-block;
-    width: 1em;
-    margin-left: -1em;
-}
-
-hr {
-    border: none;
-    height: 1px;
-    background-color: #444; /* Subtle divider */
-    margin: 2rem 0;
-}
-
-
-/* Great Hands Section */
-.great-hands-section {
-    width: 100%;
-    background-color: #fff;
-    padding: 3rem 1rem;
-    box-sizing: border-box;
-}
-
-.great-hands-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    gap: 2rem;
-    max-width: 1200px;
-    margin: 0 auto;
+    justify-content: center;
+    gap: 30px;
 }
 
-.great-hands-image {
-    flex: 1;
-    min-width: 300px;
+.service-item {
+    flex: 1 1 calc(33.333% - 30px); /* Three columns on larger screens */
+    max-width: calc(33.333% - 30px);
+    padding: 20px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
 }
 
-.great-hands-image img {
-    width: 100%;
-    max-width: 500px;
-    object-fit: cover;
+.service-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
-.great-hands-text {
-    flex: 1;
-    min-width: 300px;
-    text-align: left;
+.service-item i {
+    font-size: 3rem;
+    color: #0078ff;
+    margin-bottom: 10px;
 }
 
-.great-hands-text h2 {
-    font-size: 2.5rem;
-    color: #333;
-    margin-bottom: 1rem;
+.service-item h3 {
+    margin: 10px 0;
+    font-size: 1.2rem;
 }
 
-.great-hands-text p {
-    font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
-    margin-bottom: 1.5rem;
+.service-item p {
+    font-size: 0.9rem;
+    color: #666;
 }
 
-.live-well-btn {
-    display: inline-block;
-    background-color: #6fbf4d;
-    color: #fff;
-    padding: 0.8rem 1.5rem;
-    font-weight: bold;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
+/* Responsive Styles */
+@media (max-width: 992px) {
+    .service-item {
+        flex: 1 1 calc(50% - 30px); /* Two columns on tablets */
+        max-width: calc(50% - 30px);
+    }
 }
 
-.live-well-btn:hover {
-    background-color: #5da53b;
+@media (max-width: 600px) {
+    .service-item {
+        flex: 1 1 calc(100% - 30px); /* Single column on small screens */
+        max-width: calc(100% - 30px);
+    }
 }
 
+@media (max-width: 400px) {
+    .services-section h2 {
+        font-size: 1.5rem;
+    }
+
+    .service-item i {
+        font-size: 2.5rem;
+    }
+
+    .service-item h3 {
+        font-size: 1.1rem;
+    }
+}
 
 /* Footer Section */
 .footer {
@@ -359,51 +270,6 @@ hr {
     padding: 8px;
 }
 
-/* Partners Section */
-.partners-section {
-    background-color: #f9f9f9;
-    text-align: center;
-    padding: 3rem 1rem;
-    box-sizing: border-box;
-}
-
-.partners-container {
-    max-width: 1200px;
-    margin: 0 auto;
-}
-
-.partners-section h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-    font-weight: bold;
-    color: #333;
-}
-
-.partners-section p {
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    color: #555;
-}
-
-.partners-logos {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 2rem;
-}
-
-.partners-logos img {
-    width: 150px;
-    height: auto;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease, transform 0.3s ease;
-}
-
-.partners-logos img:hover {
-    filter: grayscale(0%);
-    transform: scale(1.1);
-}
-
 
 @media (max-width: 768px) {
     header nav {
@@ -480,53 +346,9 @@ hr {
         display: flex;
     }
     
-    
-    
-        .menu-icon {
-            display: block;
-        }
-
-        .about-container {
-            flex-direction: column;
-            text-align: center;
-        }
-
-        .vision h2, .mission h2 {
-            font-size: 1.5rem;
-        }
-    
-        .vision p, .mission p, ul li {
-            font-size: 0.9rem;
-        }
-
-        .great-hands-container {
-            flex-direction: column; /* Stack elements vertically */
-            text-align: center;
-        }
-    
-        .great-hands-text {
-            order: 1; /* Text first */
-            padding: 1rem;
-        }
-    
-        .great-hands-image {
-            order: 2; /* Image second */
-            padding-top: 1rem;
-        }
-    
-        .live-well-btn {
-            width: 100%;
-        }
-
-        .partners-logos img {
-            width: 120px;
-        }
-    
-        .partners-section h2 {
-            font-size: 1.8rem;
-        }
   }
-
+    
+  
   
   @media (min-width: 768px) {
     .menu-icon {
