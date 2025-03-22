@@ -7,7 +7,7 @@ I created this website for Boniville Student Accommodation, a housing facility s
 - HTML5: Semantic markup for structure.
 - CSS3: Flexbox, Grid, and media queries for responsive layouts.
 - JavaScript: Form validation, dynamic content loading, and interactive elements.
-# Tools:
+### Tools:
 - Git: Version control.
 - Google Fonts & Font Awesome: Typography and icons.
 - Figma: Wireframing and design prototyping.
